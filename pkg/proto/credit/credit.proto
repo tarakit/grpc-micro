@@ -1,0 +1,16 @@
+syntax = "proto3";
+ 
+package credit;
+ 
+message CreditRequest {
+    float amount = 1;
+    google.proto3.Timestamp reminder = 2;
+}
+ 
+message CreditResponse {
+    string confirmation = 1;
+}
+ 
+service CreditService {
+    rpc Credit(CreditRequest) returns (CreditResponse) {}
+}
